@@ -9,15 +9,15 @@
 #include "MergeSortBU.h"
 #include "QuickSort.h"
 #include "ReverseAlignment.h"
+#include "heap/HeapSort.h"
 
 using namespace std;
 
 const int SAMPLE = 1000000;
 
-
 int main()
 {
-    // int n = 100000;
+     int n = 15;
     // int* arr = SortTestHelper::generateNearlyOrderedArray(n, 20 );
     // int* arr = SortTestHelper::generateRandomArray(n, 0, 20);
     // int* arr1 = SortTestHelper::copyIntArray(arr, n);
@@ -39,8 +39,12 @@ int main()
     // delete[] arr;
     // delete[] arr1;
 
-    int arr[4] = {8, 7, 6, 5};
+    // int arr[4] = {8, 7, 6, 5};
 
-    ReverseAlignment::reverseAlignment(arr, 4);
+    // ReverseAlignment::reverseAlignment(arr, 4);
+
+    int* arr = SortTestHelper::generateRandomArray(n, 0, 200);
+    arr = HeapSort::heapSort(arr, n);
+    SortTestHelper::printArray(arr, n);
     return 0;
 }
