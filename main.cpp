@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-03-19 21:46:58
+ * @LastEditTime: 2020-03-23 19:54:40
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \algorithm\main.cpp
+ */
 #include <iostream>
 #include <algorithm>
 #include "SortTestHelper.h"
@@ -17,7 +25,7 @@ const int SAMPLE = 1000000;
 
 int main()
 {
-     int n = 15;
+     int n = 100;
     // int* arr = SortTestHelper::generateNearlyOrderedArray(n, 20 );
     // int* arr = SortTestHelper::generateRandomArray(n, 0, 20);
     // int* arr1 = SortTestHelper::copyIntArray(arr, n);
@@ -43,7 +51,7 @@ int main()
 
     // ReverseAlignment::reverseAlignment(arr, 4);
 
-    int* arr = SortTestHelper::generateRandomArray(n, 0, 200);
+    int* arr = SortTestHelper::generateRandomArray(n, 0, n);
     arr = HeapSort::heapSort(arr, n);
     SortTestHelper::printArray(arr, n);
     return 0;

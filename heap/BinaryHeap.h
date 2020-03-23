@@ -42,33 +42,7 @@ private:
         }
     }
 
-    // remain the properies of heap when heap top element poped
-    // k is the index of element which need to be move to keep the heap properities
-    void shiftDown(int k)
-    {
-        // 1. judge the parent whether has left child node, if not have, stop shift down
-        while (k < count && 2 * k + 1 < count)
-        {
-            // the integer k represent the index , which current should be swap with k index,
-            // default is left child node index
-            int j = 2 * k + 1;
-            // 2. determine whether have right node
-            if (j + 1 < count && data[j] < data[j + 1])
-            {
-                // 3. where there is a right child node, and right child node value bigger than left child node value
-                // then set j index become right child node index
-                j = j + 1;
-                // now index j persent the biggerst one of the children nodes index
-            }
-            // 4. determine whether the value of the parent node is bigger than that of the right child node
-            if (data[k] > data[j])
-                break;
-
-            // 5. shift down between parent node and the biggest one of the children nodes
-            swap(data[k], data[j]);
-            k = j;
-        }
-    }
+    
 
     void printItem(Item item, int pad, int fix)
     {
@@ -97,6 +71,34 @@ public:
     ~MaxHeap()
     {
         delete[] this->data;
+    }
+
+    // remain the properies of heap when heap top element poped
+    // k is the index of element which need to be move to keep the heap properities
+    void shiftDown(int k)
+    {
+        // 1. judge the parent whether has left child node, if not have, stop shift down
+        while (k < count && 2 * k + 1 < count)
+        {
+            // the integer k represent the index , which current should be swap with k index,
+            // default is left child node index
+            int j = 2 * k + 1;
+            // 2. determine whether have right node
+            if (j + 1 < count && data[j] < data[j + 1])
+            {
+                // 3. where there is a right child node, and right child node value bigger than left child node value
+                // then set j index become right child node index
+                j = j + 1;
+                // now index j persent the biggerst one of the children nodes index
+            }
+            // 4. determine whether the value of the parent node is bigger than that of the right child node
+            if (data[k] > data[j])
+                break;
+
+            // 5. shift down between parent node and the biggest one of the children nodes
+            swap(data[k], data[j]);
+            k = j;
+        }
     }
 
     int size()
@@ -162,6 +164,11 @@ public:
 
     Item* values(){
         return data;
+    }
+
+    void assign(Item item[], int n){
+        this->data = item;
+        this->count = n;
     }
 };
 
