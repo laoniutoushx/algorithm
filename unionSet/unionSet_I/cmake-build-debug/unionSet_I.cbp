@@ -82,7 +82,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="S:/algorithm/unionSet/unionSet_I/UnionFind.h">
+		<Unit filename="S:/algorithm/unionSet/unionSet_I/UnionFindI.h">
+			<Option target="unionSet_I"/>
+		</Unit>
+		<Unit filename="S:/algorithm/unionSet/unionSet_I/UnionFindII.h">
+			<Option target="unionSet_I"/>
+		</Unit>
+		<Unit filename="S:/algorithm/unionSet/unionSet_I/UnionFindTestHelper.h">
 			<Option target="unionSet_I"/>
 		</Unit>
 		<Unit filename="S:/algorithm/unionSet/unionSet_I/main.cpp">

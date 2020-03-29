@@ -6,7 +6,47 @@
 
 #IncludeRegexTransform: 
 
-S:/algorithm/unionSet/unionSet_I/UnionFind.h
+S:/algorithm/unionSet/unionSet_I/UnionFindI.h
+iostream
+-
+assert.h
+-
+
+S:/algorithm/unionSet/unionSet_I/UnionFindII.h
+iostream
+-
+assert.h
+-
+
+S:/algorithm/unionSet/unionSet_I/UnionFindIII.h
+iostream
+-
+assert.h
+-
+
+S:/algorithm/unionSet/unionSet_I/UnionFindIV.h
+iostream
+-
+assert.h
+-
+
+S:/algorithm/unionSet/unionSet_I/UnionFindTestHelper.h
+iostream
+-
+ctime
+-
+UnionFindI.h
+S:/algorithm/unionSet/unionSet_I/UnionFindI.h
+UnionFindII.h
+S:/algorithm/unionSet/unionSet_I/UnionFindII.h
+UnionFindIII.h
+S:/algorithm/unionSet/unionSet_I/UnionFindIII.h
+UnionFindIV.h
+S:/algorithm/unionSet/unionSet_I/UnionFindIV.h
+UnionFindV.h
+S:/algorithm/unionSet/unionSet_I/UnionFindV.h
+
+S:/algorithm/unionSet/unionSet_I/UnionFindV.h
 iostream
 -
 assert.h
@@ -17,6 +57,6 @@ iostream
 -
 assert.h
 -
-UnionFind.h
-S:/algorithm/unionSet/unionSet_I/UnionFind.h
+UnionFindTestHelper.h
+S:/algorithm/unionSet/unionSet_I/UnionFindTestHelper.h
 
