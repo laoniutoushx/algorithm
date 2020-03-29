@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+S:/algorithm/unionSet/unionSet_I/UnionFind.h
+iostream
+-
+assert.h
+-
+
+S:/algorithm/unionSet/unionSet_I/main.cpp
+iostream
+-
+assert.h
+-
+UnionFind.h
+S:/algorithm/unionSet/unionSet_I/UnionFind.h
+
