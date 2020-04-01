@@ -57,6 +57,20 @@ public:
 
         return false;
     }
+
+    vector<int> adj(int v) {
+        assert(v >= 0 && v < this->n);
+        return this->g[v];
+    }
+
+    void DFS(int v) {
+        assert(v >= 0 && v < n);
+        cout << v << endl;
+        for (int i = 0; i < g[v].size(); i++) {
+//            if (g[g[v][i]].size() > 0)
+                DFS(g[v][i]);
+        }
+    }
 };
 
 #endif //GRAPH_SPARSEGRAPH_H

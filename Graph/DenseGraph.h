@@ -14,18 +14,16 @@ using namespace std;
 class DenseGraph {
 private:
     int n,  // vertex num
-    d,  // matrix length/width
     m;  // edge num
     bool directed;  // whether the edge has direction
     vector<vector<bool>> g;
 public:
-    DenseGraph(int d, bool directed) {
-        this->d = d;
-        this->n = d * d;
+    DenseGraph(int n, bool directed) {
+        this->n = n;
         this->m = 0;
         this->directed = directed;
-        for (int i = 0; i < d; i++)
-            g.push_back(vector<bool>(d, false));
+        for (int i = 0; i < n; i++)
+            g.push_back(vector<bool>(n, false));
     }
 
     ~DenseGraph() {}
@@ -51,11 +49,38 @@ public:
     }
 
     bool hasEdge(int v, int w) {
-        assert(v >= 0 && v < d);
-        assert(w >= 0 && w < d);
+        assert(v >= 0 && v < n);
+        assert(w >= 0 && w < n);
 
         return this->g[v][w];
     }
+
+    //
+    vector<int> adj(int v) {
+        assert(v >= 0 && v < n);
+        vector<int> ret = vector<int>();
+        for (int i = 0; i < n; i++) {
+            if (this->g[v][i])
+                ret.push_back(i);
+            else if (this->g[i][v])
+                ret.push_back(i);
+        }
+        return ret;
+    }
+
+    // deep first search
+    void DFS(int v) {
+        assert(v >= 0 && v < this->n);
+
+        cout << v << endl;
+
+        for (int i = 0; i < n; i++)
+            if (this->g[v][i] && v != i) {
+                DFS(i);
+                return;
+            }
+    }
+
 };
 
 #endif //GRAPH_DENSEGRAPH_H
