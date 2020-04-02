@@ -1,31 +1,48 @@
 #include <iostream>
+#include <ctime>
 #include "DenseGraph.h"
 #include "SparseGraph.h"
 
 int main() {
-    int n = 10;
+    int N = 20;
+    int M = 100;
     bool directed = true;
-    DenseGraph denseGraph = DenseGraph(n, directed);
 
-    denseGraph.addEdge(0, 1);
-    denseGraph.addEdge(1, 2);
-    denseGraph.addEdge(2, 3);
-    denseGraph.addEdge(2, 4);
-    denseGraph.addEdge(3, 4);
+    srand(time(NULL));
 
-    denseGraph.DFS(0);
+    // SparseGraph
+    SparseGraph g1(N, directed);
+    for (int i = 0; i < M; i++) {
+        int a = rand() % N;
+        int b = rand() % N;
+        g1.addEdge(a, b);
+    }
 
-    cout << "--------" << endl;
+    for (int v = 0; v < N; v++) {
+        cout << v << " : ";
+        SparseGraph::adjIterator adj(g1, v);
+        for (int w = adj.begin(); !adj.end(); w = adj.next())
+            cout << w << " ";
+        cout << endl;
+    }
+    cout << endl;
 
-    SparseGraph sparseGraph = SparseGraph(n, directed);
+    // DenseGraph
+    DenseGraph g2(N, directed);
+    for (int i = 0; i < M; i++) {
+        int a = rand() % N;
+        int b = rand() % N;
+        g2.addEdge(a, b);
+    }
 
-    sparseGraph.addEdge(0, 1);
-    sparseGraph.addEdge(1, 2);
-    sparseGraph.addEdge(2, 3);
-    sparseGraph.addEdge(2, 4);
-    sparseGraph.addEdge(3, 4);
-
-    sparseGraph.DFS(0);
+    for (int v = 0; v < N; v++) {
+        cout << v << " : ";
+        DenseGraph::adjIterator adj(g2, v);
+        for (int w = adj.begin(); !adj.end(); w = adj.next())
+            cout << w << " ";
+        cout << endl;
+    }
+    cout << endl;
 
     return 0;
 }

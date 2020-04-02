@@ -16,14 +16,18 @@ private:
     int n,  // vertex num
     m;  // edge num
     bool directed;  // whether the graph has direction
+    bool *marked;
     vector<vector<int>> g;
 public:
     SparseGraph(int n, bool directed) {
         this->n = n;
         this->m = 0;
         this->directed = directed;
-        for (int i = 0; i < n; i++)
+        this->marked = new bool[n];
+        for (int i = 0; i < n; i++) {
             g.push_back(vector<int>());
+            this->marked[i] = false;
+        }
     }
 
     ~SparseGraph() {}
@@ -66,11 +70,42 @@ public:
     void DFS(int v) {
         assert(v >= 0 && v < n);
         cout << v << endl;
+        this->marked[v] = true;
         for (int i = 0; i < g[v].size(); i++) {
-//            if (g[g[v][i]].size() > 0)
-                DFS(g[v][i]);
+            if (!this->marked[this->g[v][i]])
+                DFS(this->g[v][i]);
         }
     }
+
+    class adjIterator {
+    private:
+        SparseGraph &G;
+        int v;
+        int index;
+    public:
+        adjIterator(SparseGraph &graph, int v) : G(graph) {
+            this->index = 0;
+            this->v = v;
+        }
+
+        int begin() {
+            this->index = 0;
+            if (this->G.g[v].size() > 0)
+                return this->G.g[v][index];
+            return -1;
+        }
+
+        int next() {
+            this->index++;
+            if (this->index < this->G.g[this->v].size())
+                return this->G.g[this->v][this->index];
+            return -1;
+        }
+
+        bool end() {
+            return this->index >= this->G.g[this->v].size();
+        }
+    };
 };
 
 #endif //GRAPH_SPARSEGRAPH_H
