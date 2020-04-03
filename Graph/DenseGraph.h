@@ -86,6 +86,22 @@ public:
             }
     }
 
+    void showInfo(DenseGraph &graph) {
+        cout << "DenseGraph:" << endl;
+        cout << "  ";
+        for(int x = 0; x < V(); x++)
+            cout << " " << x;
+        cout << endl;
+        for(int x = 0; x < V(); x++){
+            cout << x << "  ";
+            for(int y = 0; y < V(); y++){
+                cout << (int) this->g[x][y] << " ";
+            }
+            cout << endl;
+        }
+        cout << endl;
+    }
+
     class adjIterator {
     private:
         DenseGraph &G;

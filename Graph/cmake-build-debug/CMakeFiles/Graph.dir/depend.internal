@@ -3,5 +3,6 @@
 
 CMakeFiles/Graph.dir/main.cpp.obj
  S:/algorithm/Graph/DenseGraph.h
+ S:/algorithm/Graph/ReadGraph.h
  S:/algorithm/Graph/SparseGraph.h
  S:/algorithm/Graph/main.cpp

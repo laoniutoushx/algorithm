@@ -82,7 +82,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="S:/algorithm/Graph/Component.h">
+			<Option target="Graph"/>
+		</Unit>
 		<Unit filename="S:/algorithm/Graph/DenseGraph.h">
+			<Option target="Graph"/>
+		</Unit>
+		<Unit filename="S:/algorithm/Graph/ReadGraph.h">
 			<Option target="Graph"/>
 		</Unit>
 		<Unit filename="S:/algorithm/Graph/SparseGraph.h">

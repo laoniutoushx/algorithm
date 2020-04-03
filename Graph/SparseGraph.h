@@ -77,6 +77,18 @@ public:
         }
     }
 
+    void showInfo(SparseGraph &graph) {
+        cout << "SparseGraph:" << endl;
+        for (int v = 0; v < V(); v++) {
+            SparseGraph::adjIterator it(graph, v);
+            cout << "vertex " << v << " : ";
+            for (int w = it.begin(); !it.end(); w = it.next())
+                cout << w << " ";
+            cout << endl;
+        }
+        cout << endl;
+    }
+
     class adjIterator {
     private:
         SparseGraph &G;
