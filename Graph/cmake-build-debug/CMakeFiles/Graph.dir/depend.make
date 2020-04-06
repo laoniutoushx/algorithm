@@ -3,7 +3,9 @@
 
 CMakeFiles/Graph.dir/main.cpp.obj: ../Component.h
 CMakeFiles/Graph.dir/main.cpp.obj: ../DenseGraph.h
+CMakeFiles/Graph.dir/main.cpp.obj: ../Path.h
 CMakeFiles/Graph.dir/main.cpp.obj: ../ReadGraph.h
+CMakeFiles/Graph.dir/main.cpp.obj: ../ShortestPath.h
 CMakeFiles/Graph.dir/main.cpp.obj: ../SparseGraph.h
 CMakeFiles/Graph.dir/main.cpp.obj: ../main.cpp
 

@@ -26,7 +26,6 @@ private:
 
         visited[v] = true;      // mark the visited vertex
         identify[v] = c_count;   // assign same identify to the vertex in same connected component
-
         typename Graph::adjIterator adj(G, v);
         for (int i = adj.begin(); !adj.end(); i = adj.next()) {
             if (!visited[i])

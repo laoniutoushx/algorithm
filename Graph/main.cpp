@@ -5,6 +5,8 @@
 #include "SparseGraph.h"
 #include "ReadGraph.h"
 #include "Component.h"
+#include "Path.h"
+#include "ShortestPath.h"
 
 int main() {
 //    int N = 20;
@@ -35,6 +37,8 @@ int main() {
     SparseGraph g1(13, false);
     ReadGraph<SparseGraph> readGraph1(g1, filename02);
     Component<SparseGraph> component1(g1);
+    Path<SparseGraph> path1(g1, 0);
+    ShortestPath<SparseGraph> shortestPath1(g1, 0);
     g1.showInfo(g1);
 
 
@@ -48,5 +52,13 @@ int main() {
     cout << filename01 << " component count:" << component2.component() << endl;
 
     cout << "7 & 12 is connected:" << component1.isConnected(7, 12) << endl;
+
+    cout << endl << "DFS : ";
+    path1.showPath(6);
+
+    cout << endl << "BFS : ";
+    shortestPath1.showPath(6);
+    cout << "length between 0 & 6: " << shortestPath1.length(6) << endl;
+
     return 0;
 }

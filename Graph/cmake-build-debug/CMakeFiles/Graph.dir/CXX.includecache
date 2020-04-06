@@ -26,6 +26,16 @@ vector
 cassert
 -
 
+S:/algorithm/Graph/Path.h
+iostream
+-
+cassert
+-
+stack
+-
+vector
+-
+
 S:/algorithm/Graph/ReadGraph.h
 iostream
 -
@@ -36,6 +46,18 @@ fstream
 sstream
 -
 cassert
+-
+
+S:/algorithm/Graph/ShortestPath.h
+iostream
+-
+cassert
+-
+stack
+-
+vector
+-
+queue
 -
 
 S:/algorithm/Graph/SparseGraph.h
@@ -61,4 +83,8 @@ ReadGraph.h
 S:/algorithm/Graph/ReadGraph.h
 Component.h
 S:/algorithm/Graph/Component.h
+Path.h
+S:/algorithm/Graph/Path.h
+ShortestPath.h
+S:/algorithm/Graph/ShortestPath.h
 
