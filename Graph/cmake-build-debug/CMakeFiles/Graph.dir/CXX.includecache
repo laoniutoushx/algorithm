@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+S:/algorithm/Graph/Component.h
+iostream
+-
+string
+-
+fstream
+-
+sstream
+-
+cassert
+-
+
 S:/algorithm/Graph/DenseGraph.h
 iostream
 -
@@ -47,4 +59,6 @@ SparseGraph.h
 S:/algorithm/Graph/SparseGraph.h
 ReadGraph.h
 S:/algorithm/Graph/ReadGraph.h
+Component.h
+S:/algorithm/Graph/Component.h
 
