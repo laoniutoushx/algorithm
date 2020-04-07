@@ -31,10 +31,28 @@ public:
 
     int w() { return b; }
 
+    Weight wt() { return w; }
+
     int other(int x) {
         assert(x == a || x == b);
         return x == a ? b : a;
     }
+
+    friend ostream &operator<<(ostream &os, const Edge &e) {
+        os << e.a << "-" << e.b << ": " << e.weight;
+        return os;
+    }
+
+    bool operator<(Edge<Weight> &e) { return weight < e.wt(); }
+
+    bool operator<=(Edge<Weight> &e) { return weight <= e.wt(); }
+
+    bool operator>(Edge<Weight> &e) { return weight > e.wt(); }
+
+    bool operator>=(Edge<Weight> &e) { return weight >= e.wt(); }
+
+    bool operator==(Edge<Weight> &e) { return weight == e.wt(); }
+
 };
 
 #endif //GRAPH_EDGE_H
