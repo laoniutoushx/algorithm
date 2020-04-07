@@ -13,7 +13,7 @@
 
 using namespace std;
 
-template<typename Graph>
+template<typename Graph, typename Weight>
 class ReadGraph {
 private:
 
@@ -36,10 +36,11 @@ public:
             stringstream ss(line);
 
             int a, b;
-            ss >> a >> b;
+            Weight w;
+            ss >> a >> b >> w;
             assert(a >= 0 && a < V);
-            assert(b >=0 && b < V);
-            graph.addEdge(a, b);
+            assert(b >= 0 && b < V);
+            graph.addEdge(a, b, w);
         }
     }
 };

@@ -20,7 +20,7 @@ public:
     Edge(int a, int b, Weight weight) {
         this->a = a;
         this->b = b;
-        this->w = weight;
+        this->weight = weight;
     }
 
     Edge() {};
@@ -31,7 +31,7 @@ public:
 
     int w() { return b; }
 
-    Weight wt() { return w; }
+    Weight wt() { return weight; }
 
     int other(int x) {
         assert(x == a || x == b);

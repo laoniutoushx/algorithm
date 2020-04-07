@@ -50,7 +50,7 @@ public:
      * @param v cross axis index
      * @param w vertical axis index
      */
-    void addEdge(int v, int w, int weight) {
+    void addEdge(int v, int w, Weight weight) {
 //        if (this->hasEdge(v, w))
 //            return;
         // if have duplicate edge in graph, del this edge in graph, then recreate it in graph
@@ -77,7 +77,7 @@ public:
         return this->g[v][w] != NULL;
     }
 
-    //
+    // get all of the vertex that adjacent to a vertex {v}, return a point list
     vector<Edge<Weight> *> adj(int v) {
         assert(v >= 0 && v < n);
         vector<Edge<Weight> *> ret = vector<Edge<Weight> *>();
@@ -90,25 +90,11 @@ public:
         return ret;
     }
 
-    // deep first search
-//    void DFS(int v) {
-//        assert(v >= 0 && v < this->n);
-//
-//        cout << v << endl;
-//
-//        this->marked[v] = true;
-//        for (int i = 0; i < n; i++)
-//            if (this->g[v][i] && v != i && !this->marked[i]) {
-//                DFS(i);
-//                return;
-//            }
-//    }
-
-    void showInfo(DenseGraph &graph) {
+    void showInfo() {
         cout << "DenseGraph:" << endl;
         cout << "  ";
         for (int x = 0; x < V(); x++)
-            cout << " " << x;
+            cout << "    " << x;
         cout << endl;
         for (int x = 0; x < V(); x++) {
             cout << x << "  ";
@@ -116,7 +102,7 @@ public:
                 if (g[x][y]) {
                     cout << this->g[x][y]->wt() << " ";
                 } else {
-                    cout << "NULL\t";
+                    cout << "NULL" << " ";
                 }
             }
             cout << endl;
@@ -151,28 +137,6 @@ public:
         bool end() {
             return this->index >= this->G.V();
         }
-
-//        adjIterator(DenseGraph &graph, int v) : G(graph) {
-//            this->index = -1;
-//            this->v = v;
-//        }
-//
-//        int begin() {
-//            this->index = -1;
-//            return next();
-//        }
-//
-//        int next() {
-//            for (index += 1; index < this->G.V(); index++) {
-//                if (this->G.g[v][index])
-//                    return index;
-//            }
-//            return -1;
-//        }
-//
-//        bool end() {
-//            return this->index >= this->G.V();
-//        }
     };
 };
 

@@ -12,7 +12,7 @@
 
 using namespace std;
 
-template <typename Weight>
+template<typename Weight>
 class SparseGraph {
 private:
     int n,  // vertex num
@@ -28,7 +28,7 @@ public:
         this->directed = directed;
         this->marked = new bool[n];
         for (int i = 0; i < n; i++) {
-            g.push_back(vector<Edge<Weight *>>());
+            g.push_back(vector<Edge<Weight> *>());
             this->marked[i] = false;
         }
     }
@@ -39,18 +39,18 @@ public:
 
     int E() { return this->m; }
 
-    void addEdge(int v, int w, int weight) {
-        // 允许有平行边
-//        if (this->hasEdge(v, w))
-//            return;
-
+    void addEdge(int v, int w, Weight weight) {
         assert(v >= 0 && v < this->n);
         assert(w >= 0 && w < this->n);
+
+        // 允许有平行边
+        if (this->hasEdge(v, w))
+            return;
 
 //        g[v].push_back(w);
         g[v].push_back(new Edge<Weight>(v, w, weight));
         if (v != w && !directed)
-            g[w].push_back(v);
+            g[w].push_back(new Edge<Weight>(w, v, weight));
 
         m++;
     }
@@ -60,34 +60,25 @@ public:
         assert(w >= 0 && w < this->n);
 
         for (int i = 0; i < this->g[v].size(); i++)
-            if (g[v][i] == w)
+            if (g[v][i]->other(v) == w)
                 return true;
 
         return false;
     }
 
-    vector<int> adj(int v) {
+    // get all of the vertex that adjacent to a vertex {v}, return a point list
+    vector<Edge<Weight> *> adj(int v) {
         assert(v >= 0 && v < this->n);
         return this->g[v];
-    }
-
-    void DFS(int v) {
-        assert(v >= 0 && v < n);
-        cout << v << endl;
-        this->marked[v] = true;
-        for (int i = 0; i < g[v].size(); i++) {
-            if (!this->marked[this->g[v][i]])
-                DFS(this->g[v][i]);
-        }
     }
 
     void showInfo(SparseGraph &graph) {
         cout << "SparseGraph:" << endl;
         for (int v = 0; v < V(); v++) {
             SparseGraph::adjIterator it(graph, v);
-            cout << "vertex " << v << " : ";
-            for (int w = it.begin(); !it.end(); w = it.next())
-                cout << w << " ";
+            cout << "vertex " << v << ":\t";
+            for (Edge<Weight> *w = it.begin(); !it.end(); w = it.next())
+                cout << "(to:" << w->w() << ",wt:" << w->wt() << ")\t";
             cout << endl;
         }
         cout << endl;
@@ -104,18 +95,18 @@ public:
             this->v = v;
         }
 
-        int begin() {
+        Edge<Weight> *begin() {
             this->index = 0;
             if (this->G.g[v].size() > 0)
                 return this->G.g[v][index];
-            return -1;
+            return NULL;
         }
 
-        int next() {
+        Edge<Weight> *next() {
             this->index++;
             if (this->index < this->G.g[this->v].size())
                 return this->G.g[this->v][this->index];
-            return -1;
+            return NULL;
         }
 
         bool end() {
