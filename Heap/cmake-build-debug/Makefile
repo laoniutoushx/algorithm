@@ -64,10 +64,10 @@ RM = G:\cmake-3.17.0-win64-x64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = S:\algorithm\MST
+CMAKE_SOURCE_DIR = S:\algorithm\Heap
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = S:\algorithm\MST\cmake-build-debug
+CMAKE_BINARY_DIR = S:\algorithm\Heap\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -96,9 +96,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start S:\algorithm\MST\cmake-build-debug\CMakeFiles S:\algorithm\MST\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start S:\algorithm\Heap\cmake-build-debug\CMakeFiles S:\algorithm\Heap\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start S:\algorithm\MST\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start S:\algorithm\Heap\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -127,17 +127,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named MST
+# Target rules for targets named Heap
 
 # Build rule for target.
-MST: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 MST
-.PHONY : MST
+Heap: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 Heap
+.PHONY : Heap
 
 # fast build rule for target.
-MST/fast:
-	$(MAKE) -f CMakeFiles\MST.dir\build.make CMakeFiles/MST.dir/build
-.PHONY : MST/fast
+Heap/fast:
+	$(MAKE) -f CMakeFiles\Heap.dir\build.make CMakeFiles/Heap.dir/build
+.PHONY : Heap/fast
 
 main.obj: main.cpp.obj
 
@@ -145,7 +145,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) -f CMakeFiles\MST.dir\build.make CMakeFiles/MST.dir/main.cpp.obj
+	$(MAKE) -f CMakeFiles\Heap.dir\build.make CMakeFiles/Heap.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -154,7 +154,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles\MST.dir\build.make CMakeFiles/MST.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles\Heap.dir\build.make CMakeFiles/Heap.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -163,7 +163,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles\MST.dir\build.make CMakeFiles/MST.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles\Heap.dir\build.make CMakeFiles/Heap.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -174,7 +174,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... MST
+	@echo ... Heap
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

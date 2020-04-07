@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+S:/algorithm/Heap/MinimumHeap.h
+iostream
+-
+cassert
+-
+stack
+-
+vector
+-
+
+S:/algorithm/Heap/main.cpp
+iostream
+-
+algorithm
+-
+MinimumHeap.h
+S:/algorithm/Heap/MinimumHeap.h
+

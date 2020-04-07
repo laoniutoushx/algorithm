@@ -88,12 +88,6 @@
 		<Unit filename="S:/algorithm/Graph/DenseGraph.h">
 			<Option target="Graph"/>
 		</Unit>
-		<Unit filename="S:/algorithm/Graph/Edge.h">
-			<Option target="Graph"/>
-		</Unit>
-		<Unit filename="S:/algorithm/Graph/LazyPrimMST.h">
-			<Option target="Graph"/>
-		</Unit>
 		<Unit filename="S:/algorithm/Graph/Path.h">
 			<Option target="Graph"/>
 		</Unit>
