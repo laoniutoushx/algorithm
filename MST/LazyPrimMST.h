@@ -13,6 +13,7 @@
 #include "Edge.h"
 #include "SparseGraph.h"
 #include "DenseGraph.h"
+#include "MinimumIndexHeap.h"
 
 using namespace std;
 
@@ -22,7 +23,18 @@ class LazyPrimMST {
 private:
     Graph &G;
     int *visited;
-    Edge<Weight> *visitedEdge;
+    vector<Edge<Weight>> mst;
+    MinIndexHeap<Edge<Weight>> pq;      // priority queue
+    Weight mstWeight;
+public:
+    LazyPrimMST(Graph &graph) : G(graph), pq(MinIndexHeap<Edge<Weight>>(graph.E())) {
+        visited = new bool[G.V()];
+        // init vertex whether visited
+        for (int i = 0; i < G.V(); i++) {
+            visited[i] = false;
+        }
+        mst.clear();
+    }
 };
 
 #endif //GRAPH_LAZYPRIMMST_H

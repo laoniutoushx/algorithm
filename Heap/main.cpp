@@ -22,7 +22,7 @@ int main() {
         heapIndex.add(i);
     }
 
-    for(int i = 29999; i > 100; i--){
+    for(int i = 29999; i > 35; i--){
 //        heapIndex.del(i);
         heapIndex.delByIndex(i);
     }

@@ -82,12 +82,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="S:/algorithm/MST/MinimumHeap.h">
-			<Option target="MST"/>
-		</Unit>
-		<Unit filename="S:/algorithm/MST/MinimumIndexHeap.h">
-			<Option target="MST"/>
-		</Unit>
 		<Unit filename="S:/algorithm/MST/main.cpp">
 			<Option target="MST"/>
 		</Unit>
