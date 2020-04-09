@@ -28,25 +28,13 @@ private:
     Weight mstWeight;
 
     void handler(int v) {
+        assert(!visited[v]);
         visited[v] = true;
 
-        typename Graph::adjIterator adj(G, G.V());
+        typename Graph::adjIterator adj(G, v);
         for (Edge<Weight> *e = adj.begin(); !adj.end(); e = adj.next()) {
-            pq.add(*e);
-        }
-
-        // get the min edge
-        Edge<Weight> *minEdge = pq.pop();
-        while (minEdge->wt() > 0) {
-            int other_v = minEdge->other(v);
-            // judge whether another vertex on the min edge has visited
-            if (visited[other_v]) {   // judge the other side vertex on the edge whether visited
-                minEdge = pq.pop();
-            } else {
-                mst.push_back(minEdge);
-                pq.clear();
-                handler(other_v);
-            }
+            if (!visited[e->other(v)])
+                pq.add(*e);
         }
     }
 
@@ -60,13 +48,30 @@ public:
         mst.clear();
 
         // traversal from vertex 0;
-        int v = 0;
-        handler(v);
+        handler(0);
 
+        // get the min edge
+        while (!pq.isEmpty()) {
+            Edge<Weight> minEdge = pq.pop();
+
+            // judge whether the two vertexes on the minEdge is different side(color)
+            if (visited[minEdge.v()] == visited[minEdge.w()]) {
+                continue;
+            } else {
+                mst.push_back(minEdge);
+                if (visited[minEdge.v()]) {
+                    handler(minEdge.w());
+                } else {
+                    handler(minEdge.v());
+                }
+            }
+        }
+
+        cout << "MST: " << endl;
         for (int i = 0; i < mst.size(); i++) {
             cout << mst[i] << endl;
         }
-    }
+    };
 };
 
 #endif //GRAPH_LAZYPRIMMST_H
