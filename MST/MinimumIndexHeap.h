@@ -96,13 +96,14 @@ public:
 
     // get top element in heap
     Node pop() {
-        assert(limit >= 0);
-
-        Node ret = nodes[indexes[0]];            // remember first element in heap array
-        limit--;                        // limit --
-        swap(indexes[limit], indexes[0]);   // swap end element and first element in heap array
-        shiftDown(0);                   // keep heap property
-        return ret;
+        if (limit >= 0) {
+            Node ret = nodes[indexes[0]];            // remember first element in heap array
+            limit--;                        // limit --
+            swap(indexes[limit], indexes[0]);   // swap end element and first element in heap array
+            shiftDown(0);                   // keep heap property
+            return ret;
+        }
+        return NULL;
     }
 
     void del(Node node) {
@@ -123,6 +124,10 @@ public:
             shiftUp(del_index);
             shiftDown(del_index);
         }
+    }
+
+    void clear(){
+        limit = 0;
     }
 
     void showNodes() {

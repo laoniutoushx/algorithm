@@ -2,6 +2,7 @@
 #include "ReadGraph.h"
 #include "DenseGraph.h"
 #include "SparseGraph.h"
+#include "LazyPrimMST.h"
 
 int main() {
     string filename = "test.txt";
@@ -12,6 +13,8 @@ int main() {
     SparseGraph<double> sparseGraph(8, true);
     ReadGraph<SparseGraph<double>, double> readGraph2(sparseGraph, filename);
     sparseGraph.showInfo(sparseGraph);
+
+    LazyPrimMST<SparseGraph<double>, double> mst = LazyPrimMST<SparseGraph<double>, double>(sparseGraph);
 
     return 0;
 }
