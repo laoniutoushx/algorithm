@@ -3,4 +3,4 @@ project(MST)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(MST main.cpp PrimMST.h)
+add_executable(MST main.cpp PrimMST.h KruskalMST.h UnionFind.h)

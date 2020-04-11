@@ -90,8 +90,18 @@ public:
         this->length = n;
         this->nodes = new Node[n];
         this->indexes = new int[n];
-        for (int i = 0; i < n; i++) {
-            this->indexes[i] = i;
+    }
+
+    // put node in nodes[?] certainly
+    void insert(int index, Node node) {
+        if (index >= 0 && index < length) {
+            // put node
+            nodes[index] = node;
+
+            // save node index
+            indexes[limit] = index;
+            shiftUp(index);
+            limit++;
         }
     }
 
@@ -115,6 +125,16 @@ public:
         swap(indexes[limit], indexes[0]);   // swap end element and first element in heap array
         shiftDown(0);                   // keep heap property
         return ret;
+    }
+
+    // get top element indexes index
+    int popIndex() {
+        assert(limit >= 0);
+        int retIndex = indexes[0];
+        limit--;
+        swap(indexes[limit], indexes[0]);   // swap end element and first element in heap array
+        shiftDown(0);                   // keep heap property
+        return retIndex;
     }
 
     void del(Node node) {

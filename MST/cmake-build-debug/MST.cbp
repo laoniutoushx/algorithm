@@ -82,7 +82,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="S:/algorithm/MST/KruskalMST.h">
+			<Option target="MST"/>
+		</Unit>
 		<Unit filename="S:/algorithm/MST/PrimMST.h">
+			<Option target="MST"/>
+		</Unit>
+		<Unit filename="S:/algorithm/MST/UnionFind.h">
 			<Option target="MST"/>
 		</Unit>
 		<Unit filename="S:/algorithm/MST/main.cpp">
