@@ -17,16 +17,30 @@ int main() {
     int n = 30000;
 
     MinHeap<int> heapIndex = MinHeap<int>(n);
+    MinIndexHeap<int> minIndexHeap = MinIndexHeap<int>(n);
 
-    for(int i = 29999; i >= 0; i--){
+    for(int i = 20; i >= 0; i--){
         heapIndex.add(i);
-    }
-
-    for(int i = 29999; i > 35; i--){
-//        heapIndex.del(i);
-        heapIndex.delByIndex(i);
+        minIndexHeap.add(i);
     }
 
     heapIndex.show();
+    minIndexHeap.show();
+    minIndexHeap.showNodes();
+    minIndexHeap.showIndexes();
+
+    cout << endl;
+//    for(int i = 20; i > 5; i--){
+////        heapIndex.del(i);
+//        heapIndex.del(i);
+//        minIndexHeap.del(i);
+//    }
+    heapIndex.del(0);
+    minIndexHeap.delByIndex(20);
+
+    heapIndex.show();
+    minIndexHeap.show();
+    minIndexHeap.showNodes();
+    minIndexHeap.showIndexes();
     return 0;
 }

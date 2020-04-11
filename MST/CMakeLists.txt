@@ -3,4 +3,4 @@ project(MST)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(MST main.cpp)
+add_executable(MST main.cpp PrimMST.h)

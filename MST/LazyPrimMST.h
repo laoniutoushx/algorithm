@@ -7,13 +7,11 @@
 
 #include <iostream>
 #include <cassert>
-#include <stack>
 #include <vector>
-#include <queue>
 #include "Edge.h"
 #include "SparseGraph.h"
 #include "DenseGraph.h"
-#include "MinimumIndexHeap.h"
+#include "MinimumHeap.h"
 
 using namespace std;
 
@@ -24,7 +22,7 @@ private:
     Graph &G;
     bool *visited;
     vector<Edge<Weight>> mst;
-    MinIndexHeap<Edge<Weight>> pq;      // priority queue
+    MinHeap<Edge<Weight>> pq;      // priority queue
     Weight mstWeight;
 
     void handler(int v) {
@@ -39,7 +37,7 @@ private:
     }
 
 public:
-    LazyPrimMST(Graph &graph) : G(graph), pq(MinIndexHeap<Edge<Weight>>(graph.E())) {
+    LazyPrimMST(Graph &graph) : G(graph), pq(MinHeap<Edge<Weight>>(graph.E())) {
         visited = new bool[G.V()];
         // init vertex whether visited
         for (int i = 0; i < G.V(); i++) {
@@ -67,7 +65,7 @@ public:
             }
         }
 
-        cout << "MST: " << endl;
+        cout << "Lzay MST: " << endl;
         for (int i = 0; i < mst.size(); i++) {
             cout << mst[i] << endl;
         }

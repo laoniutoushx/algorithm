@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="S:/algorithm/MST/PrimMST.h">
+			<Option target="MST"/>
+		</Unit>
 		<Unit filename="S:/algorithm/MST/main.cpp">
 			<Option target="MST"/>
 		</Unit>

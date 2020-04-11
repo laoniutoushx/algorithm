@@ -20,7 +20,9 @@ private:
     // now it represents array indexes limit
     int length;   // the heap array initialize length
     // nodes    [1, 3, 2, 7, 5, 8];   element array
+    //           0  1  2  3  4  5       nodes index
     // indexes  [0, 1, 2, 3, 4, 5];   index of ele in nodes
+    //           0  1  2  3  4  5       indexes index
     int *indexes;    // the array indexes reflect to array node's index
 
     // handler the indexes array, only move the pointer which point to nodes element
@@ -54,11 +56,21 @@ private:
         }
     }
 
-    // return index of element node in heap array nodes
-    int find(Node node) {
+    // return {indexes index} of element node in indexes array
+    int findIndexesIndexByNodeValue(Node node) {
         for (int i = 0; i < limit; i++) {
             if (nodes[indexes[i]] == node) {
                 return i;
+            }
+        }
+        return -1;
+    }
+
+    int findIndexesIndexByNodesIndex(int node_index) {
+        if (node_index >= 0 && node_index < limit) {
+            for (int i = 0; i < limit; i++) {
+                if (node_index == indexes[i])
+                    return i;
             }
         }
         return -1;
@@ -78,8 +90,18 @@ public:
         this->length = n;
         this->nodes = new Node[n];
         this->indexes = new int[n];
-        for (int i = 0; i < n; i++) {
-            this->indexes[i] = i;
+    }
+
+    // put node in nodes[?] certainly
+    void insert(int index, Node node) {
+        if (index >= 0 && index < length) {
+            // put node
+            nodes[index] = node;
+
+            // save node index
+            indexes[limit] = index;
+            shiftUp(index);
+            limit++;
         }
     }
 
@@ -105,18 +127,18 @@ public:
         return ret;
     }
 
-    void del(Node node) {
-        int del_index = find(node);
-        if (del_index > 0) {
-            limit--;
-            swap(indexes[limit], indexes[del_index]);
-            shiftUp(del_index);
-            shiftDown(del_index);
-        }
+    // get top element indexes index
+    int popIndex() {
+        assert(limit >= 0);
+        int retIndex = indexes[0];
+        limit--;
+        swap(indexes[limit], indexes[0]);   // swap end element and first element in heap array
+        shiftDown(0);                   // keep heap property
+        return retIndex;
     }
 
-    // someone who want to del the ith node in nodes, it equals nodes[i]
-    void delByIndex(int del_index) {
+    void del(Node node) {
+        int del_index = findIndexesIndexByNodeValue(node);
         if (del_index >= 0 && del_index < limit) {
             limit--;
             swap(indexes[limit], indexes[del_index]);
@@ -125,8 +147,31 @@ public:
         }
     }
 
-    void clear() {
-        limit = 0;
+    // someone who want to del the ith node in nodes, it equals nodes[i] {nodes index}
+    void delByIndex(int del_index) {
+        if (del_index >= 0 && del_index < limit) {
+            // find indexes index by nodes index
+            del_index = findIndexesIndexByNodesIndex(del_index);
+
+            limit--;
+            swap(indexes[limit], indexes[del_index]);
+            shiftUp(del_index);
+            shiftDown(del_index);
+        }
+    }
+
+    // update node by index(node index)
+    void update(int udp_index, Node udp_node) {
+        if (udp_index >= 0 && udp_index < limit) {
+
+            nodes[udp_index] = udp_node;
+
+            // find indexes index by nodes index
+            udp_index = findIndexesIndexByNodesIndex(udp_index);
+
+            shiftUp(udp_index);
+            shiftDown(udp_index);
+        }
     }
 
     bool isEmpty() {
@@ -149,7 +194,7 @@ public:
 
     void show() {
         // level sequence traversal
-        cout << "Min Heap:" << endl;
+        cout << "Min Index Heap:" << endl;
 
         vector<int> par_s;
 
