@@ -22,6 +22,24 @@ iostream
 cassert
 -
 
+S:/algorithm/MST/KruskalMST.h
+iostream
+-
+cassert
+-
+vector
+-
+Edge.h
+S:/algorithm/MST/Edge.h
+SparseGraph.h
+S:/algorithm/MST/SparseGraph.h
+DenseGraph.h
+S:/algorithm/MST/DenseGraph.h
+MinimumIndexHeap.h
+S:/algorithm/MST/MinimumIndexHeap.h
+UnionFind.h
+S:/algorithm/MST/UnionFind.h
+
 S:/algorithm/MST/LazyPrimMST.h
 iostream
 -
@@ -92,6 +110,12 @@ cassert
 Edge.h
 S:/algorithm/MST/Edge.h
 
+S:/algorithm/MST/UnionFind.h
+iostream
+-
+cassert
+-
+
 S:/algorithm/MST/main.cpp
 iostream
 -
@@ -105,4 +129,6 @@ LazyPrimMST.h
 S:/algorithm/MST/LazyPrimMST.h
 PrimMST.h
 S:/algorithm/MST/PrimMST.h
+KruskalMST.h
+S:/algorithm/MST/KruskalMST.h
 

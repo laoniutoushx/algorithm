@@ -4,6 +4,7 @@
 #include "SparseGraph.h"
 #include "LazyPrimMST.h"
 #include "PrimMST.h"
+#include "KruskalMST.h"
 
 int main() {
     string filename = "test.txt";
@@ -19,5 +20,6 @@ int main() {
 
     PrimMST<DenseGraph<double>, double> mst1 = PrimMST<DenseGraph<double>, double>(denseGraph1);
 
+    KruskalMST<SparseGraph<double>, double> mst2 = KruskalMST<SparseGraph<double>, double>(sparseGraph);
     return 0;
 }

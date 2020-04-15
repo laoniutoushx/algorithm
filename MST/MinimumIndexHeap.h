@@ -90,6 +90,9 @@ public:
         this->length = n;
         this->nodes = new Node[n];
         this->indexes = new int[n];
+        for(int i = 0; i < n; i++){
+            indexes[i] = i;
+        }
     }
 
     // put node in nodes[?] certainly

@@ -21,7 +21,7 @@ private:
     int *height;
 
     int find(int x) {
-        while(ids[x] != x){
+        while (ids[x] != x) {
             x = ids[x];
         }
         return x;
@@ -45,12 +45,12 @@ public:
         return find(a) == find(b);
     }
 
-    void unionT(int a, int b){
+    void unionElements(int a, int b) {
         assert(a >= 0 && a < n);
         assert(b >= 0 && b < n);
-        if(height[a] > height[b]){
+        if (height[a] > height[b]) {
             ids[find(b)] = find(a);
-        }else{
+        } else {
             ids[find(a)] = find(b);
         }
     }
