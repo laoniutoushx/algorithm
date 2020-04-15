@@ -1,0 +1,3 @@
+C:\cmake-3.17.0-win64-x64\bin\cmake.exe -E rm -f CMakeFiles\ShortestPath.dir/objects.a
+C:\mingw64\bin\ar.exe cr CMakeFiles\ShortestPath.dir/objects.a @CMakeFiles\ShortestPath.dir\objects1.rsp
+C:\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\ShortestPath.dir/objects.a -Wl,--no-whole-archive  -o ShortestPath.exe -Wl,--out-implib,libShortestPath.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\ShortestPath.dir\linklibs.rsp
