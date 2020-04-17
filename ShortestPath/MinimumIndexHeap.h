@@ -90,7 +90,7 @@ public:
         this->length = n;
         this->nodes = new Node[n];
         this->indexes = new int[n];
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             indexes[i] = i;
         }
     }
@@ -179,6 +179,14 @@ public:
 
     bool isEmpty() {
         return limit == 0;
+    }
+
+    bool containValue(Node node) {
+        return findIndexesIndexByNodeValue(node) != -1;
+    }
+
+    bool containIndex(int index){
+        return findIndexesIndexByNodesIndex(index) != -1;
     }
 
     void showNodes() {
