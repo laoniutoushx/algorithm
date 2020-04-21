@@ -48,7 +48,7 @@ public:
             visited[v] = true;
 
             // Relaxation
-            typename Graph::adjIterator adj(graph, s);
+            typename Graph::adjIterator adj(graph, v);
             for (Edge<Weight> *e = adj.begin(); !adj.end(); e = adj.next()) {
                 int w = e->other(v);
                 if (!visited[w]) {
@@ -82,7 +82,7 @@ public:
     void shortestPath(int w, vector<Edge<Weight>> &vec) {
         stack<Edge<Weight> *> s;
         Edge<Weight> *e = from[w];
-        while (e->v() != e->w()) {
+        while (e != NULL) {
             s.push(e);
             e = from[e->v()];
         }
