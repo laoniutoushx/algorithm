@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="S:/algorithm/ShortestPath/Bellman-Ford.h">
+			<Option target="ShortestPath"/>
+		</Unit>
 		<Unit filename="S:/algorithm/ShortestPath/Dijkstra.h">
 			<Option target="ShortestPath"/>
 		</Unit>

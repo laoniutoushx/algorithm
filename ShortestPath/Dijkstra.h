@@ -21,9 +21,9 @@ class Dijkstra {
 private:
     int s;           // start point
     Graph &G;           // graph
-    bool *visited;      // record the point whether visited
-    Weight *distTo;          // the weight of s to every point (include self)
-    // the shortest path to s, everytime traversal all the connected point with current shorest point
+    bool *visited;      // record whether the point visited
+    Weight *distTo;          // the weight of s to every point (include self) minimal weight, represent by array
+    // the shortest path to [index] point, the value represent last shortest edge to [index] point,
     vector<Edge<Weight> *> from;
 
 public:
@@ -48,7 +48,7 @@ public:
             visited[v] = true;
 
             // Relaxation
-            typename Graph::adjIterator adj(graph, v);
+            typename Graph::adjIterator adj(graph, v);  // traversal the points adjacent to v
             for (Edge<Weight> *e = adj.begin(); !adj.end(); e = adj.next()) {
                 int w = e->other(v);
                 if (!visited[w]) {

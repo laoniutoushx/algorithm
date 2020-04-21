@@ -6,6 +6,24 @@
 
 #IncludeRegexTransform: 
 
+S:/algorithm/ShortestPath/Bellman-Ford.h
+iostream
+-
+vector
+-
+stack
+-
+cassert
+-
+Edge.h
+S:/algorithm/ShortestPath/Edge.h
+SparseGraph.h
+S:/algorithm/ShortestPath/SparseGraph.h
+DenseGraph.h
+S:/algorithm/ShortestPath/DenseGraph.h
+UnionFind.h
+S:/algorithm/ShortestPath/UnionFind.h
+
 S:/algorithm/ShortestPath/DenseGraph.h
 iostream
 -
@@ -101,4 +119,6 @@ MinimumIndexHeap.h
 S:/algorithm/ShortestPath/MinimumIndexHeap.h
 Dijkstra.h
 S:/algorithm/ShortestPath/Dijkstra.h
+Bellman-Ford.h
+S:/algorithm/ShortestPath/Bellman-Ford.h
 
