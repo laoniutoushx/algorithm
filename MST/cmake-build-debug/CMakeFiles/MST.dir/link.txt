@@ -1,3 +1,3 @@
-G:\cmake-3.17.0-win64-x64\bin\cmake.exe -E rm -f CMakeFiles\MST.dir/objects.a
-G:\mingw64\bin\ar.exe cr CMakeFiles\MST.dir/objects.a @CMakeFiles\MST.dir\objects1.rsp
-G:\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\MST.dir/objects.a -Wl,--no-whole-archive  -o MST.exe -Wl,--out-implib,libMST.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\MST.dir\linklibs.rsp
+C:\cmake-3.17.0-win64-x64\bin\cmake.exe -E rm -f CMakeFiles\MST.dir/objects.a
+C:\mingw64\bin\ar.exe cr CMakeFiles\MST.dir/objects.a @CMakeFiles\MST.dir\objects1.rsp
+C:\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\MST.dir/objects.a -Wl,--no-whole-archive  -o MST.exe -Wl,--out-implib,libMST.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\MST.dir\linklibs.rsp

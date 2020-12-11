@@ -3,4 +3,5 @@
 
 CMakeFiles/Heap.dir/main.cpp.obj
  S:/algorithm/Heap/MinimumHeap.h
+ S:/algorithm/Heap/MinimumIndexHeap.h
  S:/algorithm/Heap/main.cpp

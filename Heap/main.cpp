@@ -9,25 +9,38 @@
 #include <iostream>
 #include <algorithm>
 #include "MinimumHeap.h"
+#include "MinimumIndexHeap.h"
 
 using namespace std;
 
 int main() {
-    MinHeap<int> heap = MinHeap<int>(6);
+    int n = 30000;
 
-    heap.add(1);
-    heap.add(3);
-    heap.add(2);
-    heap.add(7);
-    heap.add(5);
-    heap.add(8);
+    MinHeap<int> heapIndex = MinHeap<int>(n);
+    MinIndexHeap<int> minIndexHeap = MinIndexHeap<int>(n);
 
-    heap.show();
-
-    for(int i = 4; i >= 0; i--){
-        heap.pop();
-        heap.show();
+    for(int i = 20; i >= 0; i--){
+        heapIndex.add(i);
+        minIndexHeap.add(i);
     }
 
+    heapIndex.show();
+    minIndexHeap.show();
+    minIndexHeap.showNodes();
+    minIndexHeap.showIndexes();
+
+    cout << endl;
+//    for(int i = 20; i > 5; i--){
+////        heapIndex.del(i);
+//        heapIndex.del(i);
+//        minIndexHeap.del(i);
+//    }
+    heapIndex.del(0);
+    minIndexHeap.delByIndex(20);
+
+    heapIndex.show();
+    minIndexHeap.show();
+    minIndexHeap.showNodes();
+    minIndexHeap.showIndexes();
     return 0;
 }

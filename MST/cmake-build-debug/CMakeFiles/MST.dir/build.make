@@ -50,10 +50,10 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = G:\cmake-3.17.0-win64-x64\bin\cmake.exe
+CMAKE_COMMAND = C:\cmake-3.17.0-win64-x64\bin\cmake.exe
 
 # The command to remove a file.
-RM = G:\cmake-3.17.0-win64-x64\bin\cmake.exe -E rm -f
+RM = C:\cmake-3.17.0-win64-x64\bin\cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -76,15 +76,15 @@ include CMakeFiles/MST.dir/flags.make
 CMakeFiles/MST.dir/main.cpp.obj: CMakeFiles/MST.dir/flags.make
 CMakeFiles/MST.dir/main.cpp.obj: ../main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=S:\algorithm\MST\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MST.dir/main.cpp.obj"
-	G:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MST.dir\main.cpp.obj -c S:\algorithm\MST\main.cpp
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MST.dir\main.cpp.obj -c S:\algorithm\MST\main.cpp
 
 CMakeFiles/MST.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MST.dir/main.cpp.i"
-	G:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E S:\algorithm\MST\main.cpp > CMakeFiles\MST.dir\main.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E S:\algorithm\MST\main.cpp > CMakeFiles\MST.dir\main.cpp.i
 
 CMakeFiles/MST.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MST.dir/main.cpp.s"
-	G:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S S:\algorithm\MST\main.cpp -o CMakeFiles\MST.dir\main.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S S:\algorithm\MST\main.cpp -o CMakeFiles\MST.dir\main.cpp.s
 
 # Object files for target MST
 MST_OBJECTS = \
