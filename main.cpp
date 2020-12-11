@@ -1,11 +1,3 @@
-/*
- * @Author: your name
- * @Date: 2020-03-19 21:46:58
- * @LastEditTime: 2020-03-23 19:54:40
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \algorithm\main.cpp
- */
 #include <iostream>
 #include <algorithm>
 #include "SortTestHelper.h"
@@ -54,5 +46,7 @@ int main()
     int* arr = SortTestHelper::generateRandomArray(n, 0, n);
     arr = HeapSort::heapSort(arr, n);
     SortTestHelper::printArray(arr, n);
+
+    system("pause");
     return 0;
 }
